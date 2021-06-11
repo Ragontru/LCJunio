@@ -11,6 +11,18 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'ej-array',
+    loadChildren: () => import('./ej-array/ej-array.module').then( m => m.EjArrayPageModule)
+  },
+  {
+    path: 'ej-api-rest',
+    loadChildren: () => import('./ej-api-rest/ej-api-rest.module').then( m => m.EjApiRestPageModule)
+  },
+  {
+    path: 'editar-ciudad',
+    loadChildren: () => import('./editar-ciudad/editar-ciudad.module').then( m => m.EditarCiudadPageModule)
+  },
 ];
 
 @NgModule({

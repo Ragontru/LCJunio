@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button ion-button (click)="closeModal()">Close</ion-button>
+    </ion-buttons>
+    <ion-title>Modificar Ciudad</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)">
+    <ion-item>
+      <ion-label position="floating" color="primary">Ciudad</ion-label>
+      <ion-input type="text" formControlName="Name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Distrito</ion-label>
+      <ion-input type="text" formControlName="District"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating" color="primary">Población</ion-label>
+      <ion-input type="number" formControlName="Population"></ion-input>
+    </ion-item>
+
+    <ion-button color="primary" class="submit-btn" expand="block" type="submit" [disabled]="!validations_form.valid">
+      Submit data</ion-button>
+  </form>
+
+</ion-content>

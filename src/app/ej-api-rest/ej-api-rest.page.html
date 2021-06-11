@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>datos-pais-json-server</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+    <ion-grid>
+      <div class="ion-padding">
+        <h3>Paises</h3>
+        <ion-row *ngFor="let country of countries; let indice=index;">
+          <ion-button fill="clear" (click)="mostrarCiudades(country.id)">{{country.Name}} - {{country.Population}} hab.
+          </ion-button>
+          <ion-col></ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-grid>
+      <div class="ion-padding">
+        <h3>Ciudades</h3>
+        <ion-row *ngFor="let city of cities; let indice=index;">
+          <ion-col>{{city.Name}} - {{city.Population}} hab.</ion-col>
+          <ion-button fill="clear" icon-only (click)="editarCiudad(city.id)" danger>
+            <ion-icon name="create-outline"></ion-icon>
+          </ion-button>
+          <ion-col></ion-col>
+        </ion-row>
+      </div>
+    </ion-grid>
+  </ion-card>
+
+</ion-content>
